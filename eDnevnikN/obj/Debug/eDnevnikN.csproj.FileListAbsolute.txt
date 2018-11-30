@@ -88,8 +88,14 @@ C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Microsoft.AI.DependencyCollector.x
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Microsoft.AI.Web.xml
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csprojAssemblyReference.cache
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.CoreCompileInputs.cache
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.CopyComplete
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.pdb
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.InitialCreate.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.GenerateResource.cache
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.MaxLengthOnNames.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.ImeIPrezime.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Profesori.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Newtonsoft.Json.pdb
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csprojAssemblyReference.cache

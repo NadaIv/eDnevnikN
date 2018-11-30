@@ -6,6 +6,12 @@
     <title>@ViewBag.Title - eDnevnikN</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+
+    @*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />*@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,6 +46,12 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @*<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

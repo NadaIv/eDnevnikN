@@ -22,5 +22,7 @@ namespace eDnevnikN.DAL
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 		}
+
+		public System.Data.Entity.DbSet<eDnevnikN.Models.Profesori> Profesoris { get; set; }
 	}
 }

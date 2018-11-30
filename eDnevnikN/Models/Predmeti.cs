@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,8 @@ namespace eDnevnikN.Models
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public int PredmetiID { get; set; }
+
+		[StringLength(50, ErrorMessage = "Ne može biti duže od 50 karaktera.")]
 		public string NazivPredmeta { get; set; }
 		public int Redosled { get; set; }
 
