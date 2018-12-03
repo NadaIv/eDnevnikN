@@ -17,12 +17,14 @@ namespace eDnevnikN.DAL
 		public DbSet<Ucenici> Ucenicis { get; set; }
 		public DbSet<Ucen_Predm_Ocena> Ucen_Predm_Ocenas { get; set; }
 		public DbSet<Predmeti> Predmetis { get; set; }
+		public DbSet<Profesori> Profesoris { get; set; }
+		public DbSet<Odeljenja> Odeljenjas { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 		}
 
-		public System.Data.Entity.DbSet<eDnevnikN.Models.Profesori> Profesoris { get; set; }
+		
 	}
 }

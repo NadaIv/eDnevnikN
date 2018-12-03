@@ -1,0 +1,50 @@
+﻿@model eDnevnikN.Models.Odeljenja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Odeljenja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesori.ImeIPrezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesori.ImeIPrezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Razred)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Razred)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojOdeljenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojOdeljenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GodinaUpisa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GodinaUpisa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OdeljenjaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

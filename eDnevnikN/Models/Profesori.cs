@@ -40,6 +40,7 @@ namespace eDnevnikN.Models
 			get { return Ime + " " + Prezime; }
 		}
 
-		
+		public virtual ICollection<Profesori> Profesoris { get; set; }
+
 	}
 }

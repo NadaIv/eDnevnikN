@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataTables-Editor-Server, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataTables-Editor-Server.1.8.1\lib\net46\DataTables-Editor-Server.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -60,6 +63,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,6 +162,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OdeljenjaController.cs" />
+    <Compile Include="Controllers\PredmetiController.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
     <Compile Include="Controllers\UceniciController.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
@@ -179,7 +187,24 @@
     <Compile Include="Migrations\201811291722148_Profesori.Designer.cs">
       <DependentUpon>201811291722148_Profesori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811301125462_Odeljenja.cs" />
+    <Compile Include="Migrations\201811301125462_Odeljenja.Designer.cs">
+      <DependentUpon>201811301125462_Odeljenja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811301442220_OdeljenjaGodinaUpisa.cs" />
+    <Compile Include="Migrations\201811301442220_OdeljenjaGodinaUpisa.Designer.cs">
+      <DependentUpon>201811301442220_OdeljenjaGodinaUpisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812022034209_Odeljenja1.cs" />
+    <Compile Include="Migrations\201812022034209_Odeljenja1.Designer.cs">
+      <DependentUpon>201812022034209_Odeljenja1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812022119573_Odeljenja2.cs" />
+    <Compile Include="Migrations\201812022119573_Odeljenja2.Designer.cs">
+      <DependentUpon>201812022119573_Odeljenja2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Odeljenja.cs" />
     <Compile Include="Models\Predmeti.cs" />
     <Compile Include="Models\Profesori.cs" />
     <Compile Include="Models\Ucenici.cs" />
@@ -258,6 +283,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -314,6 +340,16 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Predmeti\Create.cshtml" />
+    <Content Include="Views\Predmeti\Delete.cshtml" />
+    <Content Include="Views\Predmeti\Details.cshtml" />
+    <Content Include="Views\Predmeti\Edit.cshtml" />
+    <Content Include="Views\Predmeti\Index.cshtml" />
+    <Content Include="Views\Odeljenja\Create.cshtml" />
+    <Content Include="Views\Odeljenja\Delete.cshtml" />
+    <Content Include="Views\Odeljenja\Details.cshtml" />
+    <Content Include="Views\Odeljenja\Edit.cshtml" />
+    <Content Include="Views\Odeljenja\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -333,6 +369,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811291722148_Profesori.resx">
       <DependentUpon>201811291722148_Profesori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811301125462_Odeljenja.resx">
+      <DependentUpon>201811301125462_Odeljenja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811301442220_OdeljenjaGodinaUpisa.resx">
+      <DependentUpon>201811301442220_OdeljenjaGodinaUpisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812022034209_Odeljenja1.resx">
+      <DependentUpon>201812022034209_Odeljenja1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812022119573_Odeljenja2.resx">
+      <DependentUpon>201812022119573_Odeljenja2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

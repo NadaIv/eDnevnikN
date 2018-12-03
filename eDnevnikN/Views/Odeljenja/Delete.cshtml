@@ -1,0 +1,56 @@
+﻿@model eDnevnikN.Models.Odeljenja
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Odeljenja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesori.ImeIPrezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesori.ImeIPrezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Razred)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Razred)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojOdeljenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojOdeljenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GodinaUpisa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GodinaUpisa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

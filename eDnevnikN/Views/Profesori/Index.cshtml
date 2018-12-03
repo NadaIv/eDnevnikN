@@ -64,6 +64,7 @@
                     { "data": "KorisnickoIme", "autowidth": true },
                     { "data": "Lozinka", "autowidth": true },
                     { "data": "Status", "autowidth": true/*, edittype: 'select', editoptions: { 'p': 'profesor', 'a': 'admin' }*/ },
+
                     {
                         "data": "ID", "width": "50px", "render": function (data) {
                             return '<a class="popup" href="/profesori/edit/' + data + '">Edit</a>';
@@ -131,54 +132,3 @@
 </html>
 
 
-@*<h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Prezime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KorisnickoIme)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lozinka)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prezime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KorisnickoIme)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lozinka)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-            </td>
-        </tr>
-    }
-
-    </table>*@

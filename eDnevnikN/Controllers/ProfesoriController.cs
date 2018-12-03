@@ -65,14 +65,23 @@ namespace eDnevnikN.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Ime,Prezime,KorisnickoIme,Lozinka,Status")] Profesori profesori)
         {
-            if (ModelState.IsValid)
+			try
+			{
+				if (ModelState.IsValid)
             {
                 db.Profesoris.Add(profesori);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+			}
+			catch (DataException /* dex */)
+			{
+				//Prijavi gresku
 
-            return View(profesori);
+				ModelState.AddModelError("", "Ne mogu da sacuvam promene. Pokusajte ponovo,a ako se problem i dalje javlja, obratite se administratoru.");
+			}
+
+			return View(profesori);
         }
 
         // GET: Profesori/Edit/5
@@ -135,13 +144,17 @@ namespace eDnevnikN.Controllers
 		//}
 
 		// GET: Profesori/Delete/5
-		public ActionResult Delete(int? id)
+		public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profesori profesori = db.Profesoris.Find(id);
+			if (saveChangesError.GetValueOrDefault())
+			{
+				ViewBag.ErrorMessage = "Brisanje nije uspelo. Pokušajte ponovo, i ako problem i dalje postoji, pozovite vaseg administratora sistema.";
+			}
+			Profesori profesori = db.Profesoris.Find(id);
             if (profesori == null)
             {
                 return HttpNotFound();
@@ -152,12 +165,20 @@ namespace eDnevnikN.Controllers
         // POST: Profesori/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            Profesori profesori = db.Profesoris.Find(id);
+			try
+			{
+				Profesori profesori = db.Profesoris.Find(id);
             db.Profesoris.Remove(profesori);
             db.SaveChanges();
-            return RedirectToAction("Index");
+			}
+			catch (DataException/* dex */)
+			{
+				//Log the error (uncomment dex variable name and add a line here to write a log.
+				return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+			}
+			return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
