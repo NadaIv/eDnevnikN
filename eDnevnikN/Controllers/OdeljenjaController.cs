@@ -32,7 +32,7 @@ namespace eDnevnikN.Controllers
 				var odelj = (from o in db.Odeljenjas
 							 join p in db.Profesoris
 							 on o.ProfesoriID equals p.ID
-							 select new { o.OdeljenjaID, o.Razred, o.BrojOdeljenja, o.GodinaUpisa, p.Ime, p.Prezime }).ToList();
+							 select new { o.OdeljenjaID, o.GodineID, o.BrojOdeljenja, o.SkolskaGodinaID, p.Ime, p.Prezime }).ToList();
 
 
 				return Json(new { data = odelj }, JsonRequestBehavior.AllowGet);

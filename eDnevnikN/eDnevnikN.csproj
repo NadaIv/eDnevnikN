@@ -161,52 +161,41 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GodineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OdeljenjaController.cs" />
     <Compile Include="Controllers\PredmetiController.cs" />
+    <Compile Include="Controllers\Profesori1Controller.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
+    <Compile Include="Controllers\SkolskaGodinaController.cs" />
     <Compile Include="Controllers\UceniciController.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DAL\SchoolInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291200055_InitialCreate.cs" />
-    <Compile Include="Migrations\201811291200055_InitialCreate.Designer.cs">
-      <DependentUpon>201811291200055_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201812031807549_Initial_Migration.cs" />
+    <Compile Include="Migrations\201812031807549_Initial_Migration.Designer.cs">
+      <DependentUpon>201812031807549_Initial_Migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291611200_MaxLengthOnNames.cs" />
-    <Compile Include="Migrations\201811291611200_MaxLengthOnNames.Designer.cs">
-      <DependentUpon>201811291611200_MaxLengthOnNames.cs</DependentUpon>
+    <Compile Include="Migrations\201812031944402_Profesori.cs" />
+    <Compile Include="Migrations\201812031944402_Profesori.Designer.cs">
+      <DependentUpon>201812031944402_Profesori.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291625356_ImeIPrezime.cs" />
-    <Compile Include="Migrations\201811291625356_ImeIPrezime.Designer.cs">
-      <DependentUpon>201811291625356_ImeIPrezime.cs</DependentUpon>
+    <Compile Include="Migrations\201812031957477_Initial_Migration1.cs" />
+    <Compile Include="Migrations\201812031957477_Initial_Migration1.Designer.cs">
+      <DependentUpon>201812031957477_Initial_Migration1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811291722148_Profesori.cs" />
-    <Compile Include="Migrations\201811291722148_Profesori.Designer.cs">
-      <DependentUpon>201811291722148_Profesori.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811301125462_Odeljenja.cs" />
-    <Compile Include="Migrations\201811301125462_Odeljenja.Designer.cs">
-      <DependentUpon>201811301125462_Odeljenja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811301442220_OdeljenjaGodinaUpisa.cs" />
-    <Compile Include="Migrations\201811301442220_OdeljenjaGodinaUpisa.Designer.cs">
-      <DependentUpon>201811301442220_OdeljenjaGodinaUpisa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812022034209_Odeljenja1.cs" />
-    <Compile Include="Migrations\201812022034209_Odeljenja1.Designer.cs">
-      <DependentUpon>201812022034209_Odeljenja1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812022119573_Odeljenja2.cs" />
-    <Compile Include="Migrations\201812022119573_Odeljenja2.Designer.cs">
-      <DependentUpon>201812022119573_Odeljenja2.cs</DependentUpon>
+    <Compile Include="Migrations\201812041218470_Profesori1.cs" />
+    <Compile Include="Migrations\201812041218470_Profesori1.Designer.cs">
+      <DependentUpon>201812041218470_Profesori1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Godine.cs" />
     <Compile Include="Models\Odeljenja.cs" />
     <Compile Include="Models\Predmeti.cs" />
     <Compile Include="Models\Profesori.cs" />
+    <Compile Include="Models\SkolskaGodina.cs" />
     <Compile Include="Models\Ucenici.cs" />
     <Compile Include="Models\Ucen_Predm_Ocena.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -350,6 +339,21 @@
     <Content Include="Views\Odeljenja\Details.cshtml" />
     <Content Include="Views\Odeljenja\Edit.cshtml" />
     <Content Include="Views\Odeljenja\Index.cshtml" />
+    <Content Include="Views\Godine\Create.cshtml" />
+    <Content Include="Views\Godine\Delete.cshtml" />
+    <Content Include="Views\Godine\Details.cshtml" />
+    <Content Include="Views\Godine\Edit.cshtml" />
+    <Content Include="Views\Godine\Index.cshtml" />
+    <Content Include="Views\SkolskaGodina\Create.cshtml" />
+    <Content Include="Views\SkolskaGodina\Delete.cshtml" />
+    <Content Include="Views\SkolskaGodina\Details.cshtml" />
+    <Content Include="Views\SkolskaGodina\Edit.cshtml" />
+    <Content Include="Views\SkolskaGodina\Index.cshtml" />
+    <Content Include="Views\Profesori1\Create.cshtml" />
+    <Content Include="Views\Profesori1\Delete.cshtml" />
+    <Content Include="Views\Profesori1\Details.cshtml" />
+    <Content Include="Views\Profesori1\Edit.cshtml" />
+    <Content Include="Views\Profesori1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,36 +362,24 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811291200055_InitialCreate.resx">
-      <DependentUpon>201811291200055_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291611200_MaxLengthOnNames.resx">
-      <DependentUpon>201811291611200_MaxLengthOnNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291625356_ImeIPrezime.resx">
-      <DependentUpon>201811291625356_ImeIPrezime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291722148_Profesori.resx">
-      <DependentUpon>201811291722148_Profesori.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301125462_Odeljenja.resx">
-      <DependentUpon>201811301125462_Odeljenja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811301442220_OdeljenjaGodinaUpisa.resx">
-      <DependentUpon>201811301442220_OdeljenjaGodinaUpisa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812022034209_Odeljenja1.resx">
-      <DependentUpon>201812022034209_Odeljenja1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812022119573_Odeljenja2.resx">
-      <DependentUpon>201812022119573_Odeljenja2.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812031807549_Initial_Migration.resx">
+      <DependentUpon>201812031807549_Initial_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812031944402_Profesori.resx">
+      <DependentUpon>201812031944402_Profesori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812031957477_Initial_Migration1.resx">
+      <DependentUpon>201812031957477_Initial_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812041218470_Profesori1.resx">
+      <DependentUpon>201812041218470_Profesori1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

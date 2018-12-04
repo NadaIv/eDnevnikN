@@ -11,30 +11,63 @@ namespace eDnevnikN.DAL
 	{
 		protected override void Seed(SchoolContext context)
 		{
+
+			var godines = new List<Godine>
+			{
+			new Godine{GodineID=1,Opis="Prva"},
+			new Godine{GodineID=2,Opis="Druga"},
+			};
+
+			godines.ForEach(s => context.Godines.Add(s));
+			context.SaveChanges();
+
+			var skolskaGodinas = new List<SkolskaGodina>
+			{
+			new SkolskaGodina{Opis="2016/2017"},
+			new SkolskaGodina{Opis="2017/2018"},
+			};
+
+			skolskaGodinas.ForEach(s => context.SkolskaGodinas.Add(s));
+			context.SaveChanges();
+
+			var profesoris = new List<Profesori>
+			{
+			new Profesori{Ime="Nina",Prezime="Nedimovic",KorisnickoIme="admin",Lozinka="admin",Status="admin"},
+			new Profesori{Ime="Mina",Prezime="Micic",KorisnickoIme="profesor",Lozinka="profesor",Status="profesor"},
+			new Profesori{Ime="Rade",Prezime="Radic",KorisnickoIme="123456",Lozinka="654321",Status="admin"},
+			new Profesori{Ime="Mitar",Prezime="Medic",KorisnickoIme="2468",Lozinka="1357",Status="profesor"},
+			};
+
+			profesoris.ForEach(s => context.Profesoris.Add(s));
+			context.SaveChanges();
+
 			var ucenicis = new List<Ucenici>
 			{
-			new Ucenici{Prezime="Nedic",Ime="Neda",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),GodinaUpisa=DateTime.Parse("2017-09-01"), RedBrUOdeljenju=1},
-			new Ucenici{Prezime="Milic",Ime="Mila",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2006-09-01"),GodinaUpisa=DateTime.Parse("2017-09-01"), RedBrUOdeljenju=2},
-			new Ucenici{Prezime="Peric",Ime="Pera",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2000-09-01"),GodinaUpisa=DateTime.Parse("2017-09-01"), RedBrUOdeljenju=3},
-			new Ucenici{Prezime="Jovic",Ime="Jovan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),GodinaUpisa=DateTime.Parse("2017-09-01"), RedBrUOdeljenju=4},
-			new Ucenici{Prezime="Ilic",Ime="Ilija",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2004-09-01"),GodinaUpisa=DateTime.Parse("2018-09-01"), RedBrUOdeljenju=5},
-			new Ucenici{Prezime="Milic",Ime="Milan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-12-01"),GodinaUpisa=DateTime.Parse("2018-09-01"), RedBrUOdeljenju=6},
-			new Ucenici{Prezime="Ivic",Ime="Ivana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-10-01"),GodinaUpisa=DateTime.Parse("2018-09-01"), RedBrUOdeljenju=7},
-			new Ucenici{Prezime="Zoric",Ime="Zorana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-01-01"),GodinaUpisa=DateTime.Parse("2018-09-01"), RedBrUOdeljenju=8},
+			new Ucenici{Prezime="Nedic",Ime="Neda",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),SkolskaGodinaID=1, RedBrUOdeljenju=1},
+			new Ucenici{Prezime="Milic",Ime="Mila",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2006-09-01"),SkolskaGodinaID=1, RedBrUOdeljenju=2},
+			new Ucenici{Prezime="Peric",Ime="Pera",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2000-09-01"),SkolskaGodinaID=2, RedBrUOdeljenju=3},
+			new Ucenici{Prezime="Jovic",Ime="Jovan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),SkolskaGodinaID=2, RedBrUOdeljenju=4},
+			new Ucenici{Prezime="Ilic",Ime="Ilija",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2004-09-01"),SkolskaGodinaID=1, RedBrUOdeljenju=5},
+			new Ucenici{Prezime="Milic",Ime="Milan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-12-01"),SkolskaGodinaID=1, RedBrUOdeljenju=6},
+			new Ucenici{Prezime="Ivic",Ime="Ivana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-10-01"),SkolskaGodinaID=2, RedBrUOdeljenju=7},
+			new Ucenici{Prezime="Zoric",Ime="Zorana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-01-01"),SkolskaGodinaID=2, RedBrUOdeljenju=8},
 			};
 
 			ucenicis.ForEach(s => context.Ucenicis.Add(s));
 			context.SaveChanges();
 
+			
+
+
 			var predmetis = new List<Predmeti>
 			{
-			new Predmeti{PredmetiID=1050,NazivPredmeta="Srpski jezik i knjizevnost",Redosled=1,},
-			new Predmeti{PredmetiID=4022,NazivPredmeta="Engleski jezik",Redosled=2,},
-			new Predmeti{PredmetiID=4041,NazivPredmeta="Psihologija",Redosled=3,},
-			new Predmeti{PredmetiID=1045,NazivPredmeta="Filozofija",Redosled=4,},
-			new Predmeti{PredmetiID=3141,NazivPredmeta="Istorija",Redosled=5,},
-			new Predmeti{PredmetiID=2021,NazivPredmeta="Fizika",Redosled=6,},
-			new Predmeti{PredmetiID=2042,NazivPredmeta="Hemija",Redosled=7,},
+			new Predmeti{PredmetiID=1050,NazivPredmeta="Srpski jezik i knjizevnost",GodineID=1,Redosled=1,},
+			new Predmeti{PredmetiID=4022,NazivPredmeta="Engleski jezik",GodineID=1,Redosled=2,},
+			new Predmeti{PredmetiID=4041,NazivPredmeta="Psihologija",GodineID=1,Redosled=3,},
+			new Predmeti{PredmetiID=1045,NazivPredmeta="Filozofija",GodineID=1,Redosled=4,},
+			new Predmeti{PredmetiID=3141,NazivPredmeta="Istorija",GodineID=2,Redosled=5,},
+			new Predmeti{PredmetiID=2021,NazivPredmeta="Fizika",GodineID=2,Redosled=6,},
+			new Predmeti{PredmetiID=2042,NazivPredmeta="Hemija",GodineID=2,Redosled=7,},
 			};
 
 			predmetis.ForEach(s => context.Predmetis.Add(s));

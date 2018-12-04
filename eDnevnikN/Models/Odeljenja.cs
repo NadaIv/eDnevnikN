@@ -9,17 +9,15 @@ namespace eDnevnikN.Models
 	public class Odeljenja
 	{
 		public int OdeljenjaID { get; set; }
-
-		[Required]
-		[StringLength(50, ErrorMessage = "Ne može biti duže od 50 karaktera.")]
-		public string Razred { get; set; }
+		
+		public int GodineID { get; set; }
 
 		[Required]
 		[StringLength(50, ErrorMessage = "Ne može biti duže od 50 karaktera.")]
 		public string BrojOdeljenja { get; set; }
 
 		
-		public string GodinaUpisa { get; set; }
+		public int SkolskaGodinaID { get; set; }
 
 		public int ProfesoriID { get; set; }
 
@@ -28,10 +26,12 @@ namespace eDnevnikN.Models
 		{
 			get
 			{
-				return Razred + "/" + BrojOdeljenja + "/" + GodinaUpisa;
+				return GodineID + "/" + BrojOdeljenja + "/" + SkolskaGodinaID;
 			}
 		}
 
 		public virtual Profesori Profesori { get; set; }
+		public virtual Godine Godine { get; set; }
+		public virtual SkolskaGodina SkolskaGodina { get; set; }
 	}
 }

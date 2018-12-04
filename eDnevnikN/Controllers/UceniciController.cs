@@ -18,7 +18,8 @@ namespace eDnevnikN.Controllers
         // GET: Ucenici
         public ActionResult Index()
         {
-            return View(db.Ucenicis.ToList());
+			var ucenicis = db.Ucenicis.Include(u => u.SkolskaGodina);
+			return View(db.Ucenicis.ToList());
         }
 
         // GET: Ucenici/Details/5
@@ -39,7 +40,8 @@ namespace eDnevnikN.Controllers
         // GET: Ucenici/Create
         public ActionResult Create()
         {
-            return View();
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis");
+			return View();
         }
 
         // POST: Ucenici/Create
@@ -47,7 +49,7 @@ namespace eDnevnikN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Ime,Prezime,Adresa,DatumRodjenja,GodinaUpisa,RedBrUOdeljenju")] Ucenici ucenici)
+        public ActionResult Create([Bind(Include = "Ime,Prezime,Adresa,DatumRodjenja,SkolskaGodinaID,RedBrUOdeljenju")] Ucenici ucenici)
         {
 			try
 			{
@@ -63,6 +65,7 @@ namespace eDnevnikN.Controllers
 				//Log the error (uncomment dex variable name and add a line here to write a log.
 				ModelState.AddModelError("", "Nije moguće sačuvati izmene. Pokušajte ponovo, i ako problem i dalje postoji, pozovite svog administratora sistema.");
 			}
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis", ucenici.SkolskaGodinaID);
 
 			return View(ucenici);
         }
@@ -81,6 +84,7 @@ namespace eDnevnikN.Controllers
 			{
 				return HttpNotFound();
 			}
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis", ucenici.SkolskaGodinaID);
 			return View(ucenici);
 		}
 

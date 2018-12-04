@@ -26,11 +26,12 @@
     <div style="width:90%; margin:0 auto" class="tablecontainer">
         <a class="popup btn btn-primary"
            href="/predmeti/create/" style="margin-bottom:20px; margin-top:20px">Unesi novi predmet</a>
-        <table id="myPredmeti">
+        <table id="myPredmeti" class="table table-striped " style="width:100%">
             <thead>
                 <tr>
                     <th>Sifra predmeta</th>
                     <th>Naziv predmeta</th>
+                    <th>Godina</th>
                     <th>Redosled</th>
                     
 
@@ -59,6 +60,7 @@
                 "columns": [
                     { "data": "PredmetiID", "autowidth": true },
                     { "data": "NazivPredmeta", "autowidth": true },
+                    { "data": "GodineID", "autowidth": true },
                     { "data": "Redosled", "autowidth": true },
                    
                     {

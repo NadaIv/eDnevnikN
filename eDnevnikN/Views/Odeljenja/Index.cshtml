@@ -26,7 +26,7 @@
     <div style="width:90%; margin:0 auto" class="tablecontainer">
         <a class="popup btn btn-primary"
            href="/odeljenja/create/" style="margin-bottom:20px; margin-top:20px">Unesi novo odeljenje</a>
-        <table id="myOdeljenja">
+        <table id="myOdeljenja" class="table table-striped " style="width:100%">
             <thead>
                 <tr>
                     <th>Razred</th>
@@ -60,11 +60,11 @@
                     "datatype": "json"
                 },
                 "columns": [
-                    { "data": "Razred", "autowidth": true },
+                    { "data": "GodineID", "autowidth": true },
                     { "data": "BrojOdeljenja", "autowidth": true },
-                    { "data": "GodinaUpisa", "autowidth": true },
+                    { "data": "SkolskaGodinaID", "autowidth": true },
                     { "data": null, "render": function (data) { return (data["Prezime"] + "  " + data["Ime"]) }, "autowidth": true},
-                    { "data": null, "render": function (data) { return (data["Razred"] + "/" + data["BrojOdeljenja"] + "/" + data["GodinaUpisa"]) }, "autowidth": true },
+                    { "data": null, "render": function (data) { return (data["GodineID"] + "/" + data["BrojOdeljenja"] + "/" + data["SkolskaGodinaID"]) }, "autowidth": true },
                     
 
                     {

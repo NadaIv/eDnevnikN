@@ -19,10 +19,18 @@ namespace eDnevnikN.DAL
 		public DbSet<Predmeti> Predmetis { get; set; }
 		public DbSet<Profesori> Profesoris { get; set; }
 		public DbSet<Odeljenja> Odeljenjas { get; set; }
+		public DbSet<Godine> Godines { get; set; }
+		public DbSet<SkolskaGodina> SkolskaGodinas { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+			modelBuilder.Entity<Predmeti>()
+			.HasMany(c => c.Profesoris).WithMany(i => i.Predmetis)
+			.Map(t => t.MapLeftKey("PredmetiID")
+				.MapRightKey("ProfesoriID")
+				.ToTable("Predm_Prof"));
 		}
 
 		

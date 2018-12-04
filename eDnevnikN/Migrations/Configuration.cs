@@ -10,7 +10,6 @@ namespace eDnevnikN.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "eDnevnikN.DAL.SchoolContext";
         }
 
         protected override void Seed(eDnevnikN.DAL.SchoolContext context)

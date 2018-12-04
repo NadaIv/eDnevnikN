@@ -26,9 +26,9 @@ namespace eDnevnikN.Models
 		[Display(Name = "Datum rodjenja")]
 		public DateTime DatumRodjenja { get; set; }
 
-		[DataType(DataType.Date)]
-		[DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
-		public DateTime GodinaUpisa { get; set; }
+		
+		public int SkolskaGodinaID { get; set; }
+
 		public int RedBrUOdeljenju { get; set; }
 
 		[Display(Name = "Ime i prezime")]
@@ -41,5 +41,6 @@ namespace eDnevnikN.Models
 		}
 
 		public virtual ICollection<Ucen_Predm_Ocena> Ucen_Predm_Ocenas { get; set; }
+		public virtual SkolskaGodina SkolskaGodina { get; set; }
 	}
 }

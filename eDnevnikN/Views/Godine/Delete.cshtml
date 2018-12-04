@@ -1,0 +1,45 @@
+﻿@model eDnevnikN.Models.Godine
+
+@{
+                /**/
+
+                ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<p class="error">@ViewBag.ErrorMessage</p>
+<h3>Da li ste sigurni da želite ovo izbrisati?</h3>
+<div>
+    <h4>Godine</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GodineID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GodineID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    @Html.ActionLink("Back to List", "Index")
+</div>
+}
+</div>

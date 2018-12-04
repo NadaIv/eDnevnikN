@@ -92,14 +92,7 @@ C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.CoreCompile
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.CopyComplete
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.pdb
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.InitialCreate.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.GenerateResource.cache
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.MaxLengthOnNames.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.ImeIPrezime.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Profesori.resources
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Newtonsoft.Json.pdb
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Odeljenja.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.OdeljenjaGodinaUpisa.resources
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\Microsoft.Win32.Primitives.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\netstandard.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.AppContext.dll
@@ -199,6 +192,9 @@ C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.Xml.XPath.XDocument.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\DataTables-Editor-Server.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.Text.Encodings.Web.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.Text.Encodings.Web.xml
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Odeljenja1.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Odeljenja2.resources
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csprojAssemblyReference.cache
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Initial_Migration.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.GenerateResource.cache
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Profesori.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Initial_Migration1.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Profesori1.resources
