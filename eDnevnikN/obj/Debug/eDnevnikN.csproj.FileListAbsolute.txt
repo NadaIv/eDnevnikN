@@ -195,6 +195,4 @@ C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.Text.Encodings.Web.xml
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csprojAssemblyReference.cache
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Initial_Migration.resources
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.GenerateResource.cache
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Profesori.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Initial_Migration1.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Profesori1.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Datum.resources

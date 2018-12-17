@@ -21,6 +21,7 @@ namespace eDnevnikN.Controllers
 		public ActionResult Index(int? id, int? predmetiID)
 		{
 			var viewModel = new ProfesoriIndexData();
+
 			viewModel.Profesoris = db.Profesoris
 				.Include(i => i.Predmetis.Select(c => c.Godine))
 				.OrderBy(i => i.Ime);

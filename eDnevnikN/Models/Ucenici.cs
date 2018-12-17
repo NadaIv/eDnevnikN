@@ -22,7 +22,9 @@ namespace eDnevnikN.Models
 		public string Adresa { get; set; }
 
 		[DataType(DataType.Date)]
-		[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+
+		//[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+		//public string FormattedDate => DatumRodjenja.ToShortDateString();
 		[Display(Name = "Datum rodjenja")]
 		public DateTime DatumRodjenja { get; set; }
 

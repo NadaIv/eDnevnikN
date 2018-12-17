@@ -62,6 +62,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
@@ -166,29 +167,28 @@
     <Compile Include="Controllers\OdeljenjaController.cs" />
     <Compile Include="Controllers\PredmetiController.cs" />
     <Compile Include="Controllers\Profesori1Controller.cs" />
+    <Compile Include="Controllers\Profesori2Controller.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
     <Compile Include="Controllers\SkolskaGodinaController.cs" />
+    <Compile Include="Controllers\Ucenici1Controller.cs" />
     <Compile Include="Controllers\UceniciController.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DAL\SchoolInitializer.cs" />
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812031807549_Initial_Migration.cs" />
-    <Compile Include="Migrations\201812031807549_Initial_Migration.Designer.cs">
-      <DependentUpon>201812031807549_Initial_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201812052351175_Initial_Migration.cs" />
+    <Compile Include="Migrations\201812052351175_Initial_Migration.Designer.cs">
+      <DependentUpon>201812052351175_Initial_Migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812031944402_Profesori.cs" />
-    <Compile Include="Migrations\201812031944402_Profesori.Designer.cs">
-      <DependentUpon>201812031944402_Profesori.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812031957477_Initial_Migration1.cs" />
-    <Compile Include="Migrations\201812031957477_Initial_Migration1.Designer.cs">
-      <DependentUpon>201812031957477_Initial_Migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812041218470_Profesori1.cs" />
-    <Compile Include="Migrations\201812041218470_Profesori1.Designer.cs">
-      <DependentUpon>201812041218470_Profesori1.cs</DependentUpon>
+    <Compile Include="Migrations\201812101844211_Datum.cs" />
+    <Compile Include="Migrations\201812101844211_Datum.Designer.cs">
+      <DependentUpon>201812101844211_Datum.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Godine.cs" />
@@ -275,6 +275,14 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram11.cd" />
+    <Content Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -298,7 +306,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -356,6 +366,16 @@
     <Content Include="Views\Profesori1\Details.cshtml" />
     <Content Include="Views\Profesori1\Edit.cshtml" />
     <Content Include="Views\Profesori1\Index.cshtml" />
+    <Content Include="Views\Profesori2\Create.cshtml" />
+    <Content Include="Views\Profesori2\Delete.cshtml" />
+    <Content Include="Views\Profesori2\Details.cshtml" />
+    <Content Include="Views\Profesori2\Edit.cshtml" />
+    <Content Include="Views\Profesori2\Index.cshtml" />
+    <Content Include="Views\Ucenici1\Create.cshtml" />
+    <Content Include="Views\Ucenici1\Delete.cshtml" />
+    <Content Include="Views\Ucenici1\Details.cshtml" />
+    <Content Include="Views\Ucenici1\Edit.cshtml" />
+    <Content Include="Views\Ucenici1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,20 +387,15 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812031807549_Initial_Migration.resx">
-      <DependentUpon>201812031807549_Initial_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812052351175_Initial_Migration.resx">
+      <DependentUpon>201812052351175_Initial_Migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812031944402_Profesori.resx">
-      <DependentUpon>201812031944402_Profesori.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812031957477_Initial_Migration1.resx">
-      <DependentUpon>201812031957477_Initial_Migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812041218470_Profesori1.resx">
-      <DependentUpon>201812041218470_Profesori1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812101844211_Datum.resx">
+      <DependentUpon>201812101844211_Datum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

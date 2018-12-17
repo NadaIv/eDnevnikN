@@ -12,6 +12,7 @@ namespace eDnevnikN.DAL
 	{
 		public SchoolContext() : base("SchoolContext")
 		{
+			
 		}
 
 		public DbSet<Ucenici> Ucenicis { get; set; }
@@ -21,6 +22,8 @@ namespace eDnevnikN.DAL
 		public DbSet<Odeljenja> Odeljenjas { get; set; }
 		public DbSet<Godine> Godines { get; set; }
 		public DbSet<SkolskaGodina> SkolskaGodinas { get; set; }
+		
+
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
@@ -33,6 +36,6 @@ namespace eDnevnikN.DAL
 				.ToTable("Predm_Prof"));
 		}
 
-		
+
 	}
 }
