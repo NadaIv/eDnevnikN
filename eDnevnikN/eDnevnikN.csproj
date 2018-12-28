@@ -169,6 +169,7 @@
     <Compile Include="Controllers\Profesori1Controller.cs" />
     <Compile Include="Controllers\Profesori2Controller.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
+    <Compile Include="Controllers\Prof_PredmController.cs" />
     <Compile Include="Controllers\SkolskaGodinaController.cs" />
     <Compile Include="Controllers\Ucenici1Controller.cs" />
     <Compile Include="Controllers\UceniciController.cs" />
@@ -182,19 +183,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812052351175_Initial_Migration.cs" />
-    <Compile Include="Migrations\201812052351175_Initial_Migration.Designer.cs">
-      <DependentUpon>201812052351175_Initial_Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812101844211_Datum.cs" />
-    <Compile Include="Migrations\201812101844211_Datum.Designer.cs">
-      <DependentUpon>201812101844211_Datum.cs</DependentUpon>
+    <Compile Include="Migrations\201812181246293_Initial_Migration.cs" />
+    <Compile Include="Migrations\201812181246293_Initial_Migration.Designer.cs">
+      <DependentUpon>201812181246293_Initial_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Godine.cs" />
     <Compile Include="Models\Odeljenja.cs" />
     <Compile Include="Models\Predmeti.cs" />
     <Compile Include="Models\Profesori.cs" />
+    <Compile Include="Models\Prof_Predm.cs" />
     <Compile Include="Models\SkolskaGodina.cs" />
     <Compile Include="Models\Ucenici.cs" />
     <Compile Include="Models\Ucen_Predm_Ocena.cs" />
@@ -207,6 +205,65 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="Content\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="Content\DataTables\datatables.css" />
+    <Content Include="Content\DataTables\datatables.js" />
+    <Content Include="Content\DataTables\datatables.min.css" />
+    <Content Include="Content\DataTables\datatables.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\dataTables.rowGroup.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\dataTables.rowGroup.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.bootstrap.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.bootstrap.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.bootstrap4.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.bootstrap4.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.dataTables.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.foundation.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.foundation.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.jqueryui.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.jqueryui.min.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.semanicui.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.semanticui.js" />
+    <Content Include="Content\DataTables\RowGroup-1.1.0\js\rowGroup.semanticui.min.js" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -376,6 +433,11 @@
     <Content Include="Views\Ucenici1\Details.cshtml" />
     <Content Include="Views\Ucenici1\Edit.cshtml" />
     <Content Include="Views\Ucenici1\Index.cshtml" />
+    <Content Include="Views\Prof_Predm\Create.cshtml" />
+    <Content Include="Views\Prof_Predm\Delete.cshtml" />
+    <Content Include="Views\Prof_Predm\Details.cshtml" />
+    <Content Include="Views\Prof_Predm\Edit.cshtml" />
+    <Content Include="Views\Prof_Predm\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -391,11 +453,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812052351175_Initial_Migration.resx">
-      <DependentUpon>201812052351175_Initial_Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812101844211_Datum.resx">
-      <DependentUpon>201812101844211_Datum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812181246293_Initial_Migration.resx">
+      <DependentUpon>201812181246293_Initial_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

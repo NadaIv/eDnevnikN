@@ -22,6 +22,7 @@ namespace eDnevnikN.DAL
 		public DbSet<Odeljenja> Odeljenjas { get; set; }
 		public DbSet<Godine> Godines { get; set; }
 		public DbSet<SkolskaGodina> SkolskaGodinas { get; set; }
+		public DbSet<Prof_Predm> Prof_Predms { get; set; }
 		
 
 
@@ -29,11 +30,11 @@ namespace eDnevnikN.DAL
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-			modelBuilder.Entity<Predmeti>()
-			.HasMany(c => c.Profesoris).WithMany(i => i.Predmetis)
-			.Map(t => t.MapLeftKey("PredmetiID")
-				.MapRightKey("ProfesoriID")
-				.ToTable("Predm_Prof"));
+			//modelBuilder.Entity<Predmeti>()
+			//.HasMany(c => c.Profesoris).WithMany(i => i.Predmetis)
+			//.Map(t => t.MapLeftKey("PredmetiID")
+			//	.MapRightKey("ProfesoriID")
+			//	.ToTable("Predm_Prof"));
 		}
 
 

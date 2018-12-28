@@ -29,7 +29,14 @@ namespace eDnevnikN.Controllers
 				var ucen = (from o in db.Ucenicis
 							 join p in db.SkolskaGodinas
 							 on o.SkolskaGodinaID equals p.SkolskaGodinaID
-							 select new { o.ID, o.Ime, o.Prezime,o.Adresa, o.DatumRodjenja,o.RedBrUOdeljenju,p.SkolskaGodinaID,p.Opis}).ToList();
+							 select new { o.ID,
+										  o.Ime,
+							       	      o.Prezime,
+								          o.Adresa,
+								          o.DatumRodjenja,
+								          o.RedBrUOdeljenju,
+								          p.SkolskaGodinaID,
+								          p.Opis}).ToList();
 
 
 				return Json(new { data = ucen }, JsonRequestBehavior.AllowGet);

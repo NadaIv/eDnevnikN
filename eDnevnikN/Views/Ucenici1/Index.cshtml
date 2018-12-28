@@ -64,16 +64,11 @@
                     { "data": "Prezime", "autowidth": true },
                     { "data": "Adresa", "autowidth": true },
                     {
-                        //"data": null, "render": function (data) { return convertToDate(data); },"autowidth":true
-
-                        //"data": "DatumRodjenja", render: function (data, type, announcement) {
-                        //    return announcement.FormattedDate; }, "autowidth": true
-
                         "data": "DatumRodjenja",
                         "render": function (jsonDate) {
                             var date = new Date(parseInt(jsonDate.substr(6)));
                             var month = date.getMonth() + 1;
-                            return month + "/" + date.getDate() + "/" + date.getFullYear();
+                            return date.getDate() + "." + month + "." + date.getFullYear();
                         }, "autowidth": true
                     },
                     { "data": null, "render": function (data) { return (data["Opis"]) }, "autowidth": true},
@@ -82,29 +77,24 @@
 
                     {
                         "data": "ID", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/ucenici/edit/' + data + '">Edit</a>';
+                            return '<a class="popup" href="/ucenici1/edit/' + data + '">Edit</a>';
                         }
                     },
 
                     {
                         "data": "ID", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/ucenici/details/' + data + '">Details</a>';
+                            return '<a class="popup" href="/ucenici1/details/' + data + '">Details</a>';
                         }
                     },
 
                     {
                         "data": "ID", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/ucenici/delete/' + data + '">Delete</a>';
+                            return '<a class="popup" href="/ucenici1/delete/' + data + '">Delete</a>';
                         }
                     }
                 ]
             })
-            //$('#MyUcenici').DataTable({
-            //    columnDefs: [{
-            //        targets: 3,
-            //        render: $.fn.dataTable.render.moment('yyyy-MM-dd')
-            //    }]
-            //});
+            
            
             $('.tablecontainer').on('click', 'a.popup', function (e) {
                 e.preventDefault();

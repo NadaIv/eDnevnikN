@@ -13,7 +13,7 @@ namespace eDnevnikN.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812052351175_Initial_Migration"; }
+            get { return "201812181246293_Initial_Migration"; }
         }
         
         string IMigrationMetadata.Source

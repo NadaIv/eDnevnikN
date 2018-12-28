@@ -61,6 +61,20 @@ namespace eDnevnikN.Migrations
                 .Index(t => t.GodineID);
             
             CreateTable(
+                "dbo.Prof_Predm",
+                c => new
+                    {
+                        Prof_PredmID = c.Int(nullable: false, identity: true),
+                        ProfesoriID = c.Int(nullable: false),
+                        PredmetiID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Prof_PredmID)
+                .ForeignKey("dbo.Predmeti", t => t.PredmetiID, cascadeDelete: true)
+                .ForeignKey("dbo.Profesori", t => t.ProfesoriID, cascadeDelete: true)
+                .Index(t => t.ProfesoriID)
+                .Index(t => t.PredmetiID);
+            
+            CreateTable(
                 "dbo.Ucen_Predm_Ocena",
                 c => new
                     {
@@ -102,17 +116,17 @@ namespace eDnevnikN.Migrations
                 .PrimaryKey(t => t.SkolskaGodinaID);
             
             CreateTable(
-                "dbo.Predm_Prof",
+                "dbo.PredmetiProfesori",
                 c => new
                     {
-                        PredmetiID = c.Int(nullable: false),
-                        ProfesoriID = c.Int(nullable: false),
+                        Predmeti_PredmetiID = c.Int(nullable: false),
+                        Profesori_ID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.PredmetiID, t.ProfesoriID })
-                .ForeignKey("dbo.Predmeti", t => t.PredmetiID, cascadeDelete: true)
-                .ForeignKey("dbo.Profesori", t => t.ProfesoriID, cascadeDelete: true)
-                .Index(t => t.PredmetiID)
-                .Index(t => t.ProfesoriID);
+                .PrimaryKey(t => new { t.Predmeti_PredmetiID, t.Profesori_ID })
+                .ForeignKey("dbo.Predmeti", t => t.Predmeti_PredmetiID, cascadeDelete: true)
+                .ForeignKey("dbo.Profesori", t => t.Profesori_ID, cascadeDelete: true)
+                .Index(t => t.Predmeti_PredmetiID)
+                .Index(t => t.Profesori_ID);
             
         }
         
@@ -123,23 +137,28 @@ namespace eDnevnikN.Migrations
             DropForeignKey("dbo.Ucenici", "SkolskaGodinaID", "dbo.SkolskaGodina");
             DropForeignKey("dbo.Odeljenja", "SkolskaGodinaID", "dbo.SkolskaGodina");
             DropForeignKey("dbo.Ucen_Predm_Ocena", "PredmetiID", "dbo.Predmeti");
-            DropForeignKey("dbo.Predm_Prof", "ProfesoriID", "dbo.Profesori");
-            DropForeignKey("dbo.Predm_Prof", "PredmetiID", "dbo.Predmeti");
+            DropForeignKey("dbo.PredmetiProfesori", "Profesori_ID", "dbo.Profesori");
+            DropForeignKey("dbo.PredmetiProfesori", "Predmeti_PredmetiID", "dbo.Predmeti");
+            DropForeignKey("dbo.Prof_Predm", "ProfesoriID", "dbo.Profesori");
+            DropForeignKey("dbo.Prof_Predm", "PredmetiID", "dbo.Predmeti");
             DropForeignKey("dbo.Predmeti", "GodineID", "dbo.Godine");
             DropForeignKey("dbo.Odeljenja", "GodineID", "dbo.Godine");
-            DropIndex("dbo.Predm_Prof", new[] { "ProfesoriID" });
-            DropIndex("dbo.Predm_Prof", new[] { "PredmetiID" });
+            DropIndex("dbo.PredmetiProfesori", new[] { "Profesori_ID" });
+            DropIndex("dbo.PredmetiProfesori", new[] { "Predmeti_PredmetiID" });
             DropIndex("dbo.Ucenici", new[] { "SkolskaGodinaID" });
             DropIndex("dbo.Ucen_Predm_Ocena", new[] { "UceniciID" });
             DropIndex("dbo.Ucen_Predm_Ocena", new[] { "PredmetiID" });
+            DropIndex("dbo.Prof_Predm", new[] { "PredmetiID" });
+            DropIndex("dbo.Prof_Predm", new[] { "ProfesoriID" });
             DropIndex("dbo.Predmeti", new[] { "GodineID" });
             DropIndex("dbo.Odeljenja", new[] { "ProfesoriID" });
             DropIndex("dbo.Odeljenja", new[] { "SkolskaGodinaID" });
             DropIndex("dbo.Odeljenja", new[] { "GodineID" });
-            DropTable("dbo.Predm_Prof");
+            DropTable("dbo.PredmetiProfesori");
             DropTable("dbo.SkolskaGodina");
             DropTable("dbo.Ucenici");
             DropTable("dbo.Ucen_Predm_Ocena");
+            DropTable("dbo.Prof_Predm");
             DropTable("dbo.Predmeti");
             DropTable("dbo.Profesori");
             DropTable("dbo.Odeljenja");

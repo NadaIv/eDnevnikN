@@ -27,16 +27,24 @@ namespace eDnevnikN.Controllers
 		{
 			using (SchoolContext db = new SchoolContext())
 			{
-				db.Configuration.LazyLoadingEnabled = false;
-				var predmetis = db.Predmetis.OrderBy(a => a.NazivPredmeta).ToList();
-				return Json(new { data = predmetis }, JsonRequestBehavior.AllowGet);
+
+				var predmetis = (from p in db.Predmetis
+								 join g in db.Godines
+								 on p.GodineID equals g.GodineID
+								 select new
+								 {
+									 p.PredmetiID,
+									 p.NazivPredmeta,
+									 p.GodineID,
+									 g.Opis,
+									 p.Redosled
+								 }).ToList();
+											
+								return Json(new { data = predmetis }, JsonRequestBehavior.AllowGet);
 			}
 		}
 
-		//public ActionResult Index()
-		//{
-		//    return View(db.Predmetis.ToList());
-		//}
+		
 
 		// GET: Predmeti/Details/5
 		public ActionResult Details(int? id)
@@ -56,7 +64,8 @@ namespace eDnevnikN.Controllers
         // GET: Predmeti/Create
         public ActionResult Create()
         {
-            return View();
+			ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis");
+			return View();
         }
 
         // POST: Predmeti/Create
@@ -64,7 +73,7 @@ namespace eDnevnikN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PredmetiID,NazivPredmeta,Redosled")] Predmeti predmeti)
+        public ActionResult Create([Bind(Include = "PredmetiID,NazivPredmeta,GodineID,Redosled")] Predmeti predmeti)
         {
 			try
 			{
@@ -74,6 +83,7 @@ namespace eDnevnikN.Controllers
 					db.SaveChanges();
 					return RedirectToAction("Index");
 				}
+				ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis", predmeti.PredmetiID);
 			}
 			catch (DataException /* dex */)
 			{
@@ -96,7 +106,8 @@ namespace eDnevnikN.Controllers
             {
                 return HttpNotFound();
             }
-            return View(predmeti);
+			ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis",predmeti.PredmetiID);
+			return View(predmeti);
         }
 
 		// POST: Predmeti/Edit/5
@@ -113,7 +124,7 @@ namespace eDnevnikN.Controllers
 			}
 			var predmetiToUpdate = db.Predmetis.Find(id);
 			if (TryUpdateModel(predmetiToUpdate, "",
-			   new string[] { "PredmetiID", "NazivPredmeta", "Redosled" }))
+			   new string[] { "PredmetiID", "NazivPredmeta","GodineID", "Redosled" }))
 			{
 				try
 				{

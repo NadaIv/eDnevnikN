@@ -60,7 +60,8 @@
                 "columns": [
                     { "data": "PredmetiID", "autowidth": true },
                     { "data": "NazivPredmeta", "autowidth": true },
-                    { "data": "GodineID", "autowidth": true },
+                    //{ "data": "GodineID", "autowidth": true },
+                    { "data": null, "render": function (data) { return (data["GodineID"] + " (" + data["Opis"])+ ")" }, "autowidth": true },
                     { "data": "Redosled", "autowidth": true },
                    
                     {
