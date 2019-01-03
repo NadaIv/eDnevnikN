@@ -1,4 +1,7 @@
-﻿@model eDnevnikN.Models.Profesori
+﻿
+
+
+@model eDnevnikN.Models.Profesori
 
 @{
     ViewBag.Title = "Edit";
@@ -10,7 +13,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Profesori</h4>
         <hr />
@@ -54,19 +57,47 @@
             <div class="col-md-10">
                 @*@Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.DropDownList("Status", new List<SelectListItem> {
-               new SelectListItem{Text="profesor", Value="profesor"},
-               new SelectListItem{Text="admin", Value="admin"} }, "Izaberi status")
+        new SelectListItem{Text="profesor", Value="profesor"},
+        new SelectListItem{Text="admin", Value="admin"} }, "Izaberi status")
                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <table>
+                    <tr>
+                        @{
+                            int cnt = 0;
+                            List<eDnevnikN.ViewModels.DodelaPredmProf> predmeti = ViewBag.Predmetis;
+
+                            foreach (var predmet in predmeti)
+                            {
+                                if (cnt++ % 3 == 0)
+                                {
+                                @:</tr><tr>
+                                }
+                                @:<td>
+                                    <input type="checkbox"
+                                           name="selectedPredmeti"
+                                           value="@predmet.PredmetiID"
+                                           @(Html.Raw(predmet.Dodela ? "checked=\"checked\"" : "")) />
+                                    @predmet.PredmetiID @:  @predmet.NazivPredmeta
+                                @:</td>
+                            }
+                        @:</tr>
+                        }
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
 
 <div>
     @Html.ActionLink("Back to List", "Index")

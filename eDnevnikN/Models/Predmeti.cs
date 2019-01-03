@@ -22,7 +22,6 @@ namespace eDnevnikN.Models
 
 
 		public virtual ICollection<Ucen_Predm_Ocena> Ucen_Predm_Ocenas { get; set; }
-		public virtual ICollection<Prof_Predm> Prof_Predms { get; set; }
 		public virtual Godine Godine { get; set; }
 		public virtual ICollection<Profesori> Profesoris { get; set; }
 	}

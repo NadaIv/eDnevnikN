@@ -166,12 +166,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OdeljenjaController.cs" />
     <Compile Include="Controllers\PredmetiController.cs" />
-    <Compile Include="Controllers\Profesori1Controller.cs" />
-    <Compile Include="Controllers\Profesori2Controller.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
-    <Compile Include="Controllers\Prof_PredmController.cs" />
     <Compile Include="Controllers\SkolskaGodinaController.cs" />
-    <Compile Include="Controllers\Ucenici1Controller.cs" />
     <Compile Include="Controllers\UceniciController.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DAL\SchoolInitializer.cs" />
@@ -183,16 +179,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812181246293_Initial_Migration.cs" />
-    <Compile Include="Migrations\201812181246293_Initial_Migration.Designer.cs">
-      <DependentUpon>201812181246293_Initial_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201901030924189_initial.cs" />
+    <Compile Include="Migrations\201901030924189_initial.Designer.cs">
+      <DependentUpon>201901030924189_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901031434267_Odeljenja.cs" />
+    <Compile Include="Migrations\201901031434267_Odeljenja.Designer.cs">
+      <DependentUpon>201901031434267_Odeljenja.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Godine.cs" />
     <Compile Include="Models\Odeljenja.cs" />
     <Compile Include="Models\Predmeti.cs" />
     <Compile Include="Models\Profesori.cs" />
-    <Compile Include="Models\Prof_Predm.cs" />
     <Compile Include="Models\SkolskaGodina.cs" />
     <Compile Include="Models\Ucenici.cs" />
     <Compile Include="Models\Ucen_Predm_Ocena.cs" />
@@ -379,16 +378,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Ucenici\Create.cshtml" />
-    <Content Include="Views\Ucenici\Delete.cshtml" />
-    <Content Include="Views\Ucenici\Details.cshtml" />
-    <Content Include="Views\Ucenici\Edit.cshtml" />
-    <Content Include="Views\Ucenici\Index.cshtml" />
-    <Content Include="Views\Profesori\Create.cshtml" />
-    <Content Include="Views\Profesori\Delete.cshtml" />
-    <Content Include="Views\Profesori\Details.cshtml" />
-    <Content Include="Views\Profesori\Edit.cshtml" />
-    <Content Include="Views\Profesori\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -418,26 +407,16 @@
     <Content Include="Views\SkolskaGodina\Details.cshtml" />
     <Content Include="Views\SkolskaGodina\Edit.cshtml" />
     <Content Include="Views\SkolskaGodina\Index.cshtml" />
-    <Content Include="Views\Profesori1\Create.cshtml" />
-    <Content Include="Views\Profesori1\Delete.cshtml" />
-    <Content Include="Views\Profesori1\Details.cshtml" />
-    <Content Include="Views\Profesori1\Edit.cshtml" />
-    <Content Include="Views\Profesori1\Index.cshtml" />
-    <Content Include="Views\Profesori2\Create.cshtml" />
-    <Content Include="Views\Profesori2\Delete.cshtml" />
-    <Content Include="Views\Profesori2\Details.cshtml" />
-    <Content Include="Views\Profesori2\Edit.cshtml" />
-    <Content Include="Views\Profesori2\Index.cshtml" />
-    <Content Include="Views\Ucenici1\Create.cshtml" />
-    <Content Include="Views\Ucenici1\Delete.cshtml" />
-    <Content Include="Views\Ucenici1\Details.cshtml" />
-    <Content Include="Views\Ucenici1\Edit.cshtml" />
-    <Content Include="Views\Ucenici1\Index.cshtml" />
-    <Content Include="Views\Prof_Predm\Create.cshtml" />
-    <Content Include="Views\Prof_Predm\Delete.cshtml" />
-    <Content Include="Views\Prof_Predm\Details.cshtml" />
-    <Content Include="Views\Prof_Predm\Edit.cshtml" />
-    <Content Include="Views\Prof_Predm\Index.cshtml" />
+    <Content Include="Views\Profesori\Create.cshtml" />
+    <Content Include="Views\Profesori\Delete.cshtml" />
+    <Content Include="Views\Profesori\Details.cshtml" />
+    <Content Include="Views\Profesori\Edit.cshtml" />
+    <Content Include="Views\Profesori\Index.cshtml" />
+    <Content Include="Views\Ucenici\Create.cshtml" />
+    <Content Include="Views\Ucenici\Delete.cshtml" />
+    <Content Include="Views\Ucenici\Details.cshtml" />
+    <Content Include="Views\Ucenici\Edit.cshtml" />
+    <Content Include="Views\Ucenici\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -453,8 +432,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812181246293_Initial_Migration.resx">
-      <DependentUpon>201812181246293_Initial_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901030924189_initial.resx">
+      <DependentUpon>201901030924189_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901031434267_Odeljenja.resx">
+      <DependentUpon>201901031434267_Odeljenja.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

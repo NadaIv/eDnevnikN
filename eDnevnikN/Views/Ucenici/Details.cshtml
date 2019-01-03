@@ -11,6 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.SkolskaGodina.Opis_sg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkolskaGodina.Opis_sg)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Ime)
         </dt>
 
@@ -43,41 +51,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SkolskaGodinaID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SkolskaGodinaID)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.RedBrUOdeljenju)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.RedBrUOdeljenju)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Ucen_Predm_Ocenas)
-        </dt>
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>Naziv predmeta</th>
-                    <th>Ocene</th>
-                </tr>
-                @foreach (var item in Model.Ucen_Predm_Ocenas)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Predmeti.NazivPredmeta)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Ocene)
-                        </td>
-                    </tr>
-                }
-            </table>
         </dd>
 
     </dl>

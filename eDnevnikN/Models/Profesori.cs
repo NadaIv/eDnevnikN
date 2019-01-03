@@ -41,6 +41,6 @@ namespace eDnevnikN.Models
 		}
 
 		public virtual ICollection<Predmeti> Predmetis { get; set; }
-		public virtual ICollection<Prof_Predm> Prof_Predms { get; set; }
+		
 	}
 }

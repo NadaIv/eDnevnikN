@@ -29,12 +29,13 @@
         <table id="myOdeljenja" class="table table-striped " style="width:100%">
             <thead>
                 <tr>
-                    <th>Razred</th>
-                    <th>Broj odeljenja</th>
                     <th>Godina upisa</th>
-                    <th>Staresina</th>
+                    <th>Godina</th>
+                    <th>Broj odeljenja</th>
                     <th>Maticni broj odeljenja</th>
-                   
+                    <th>Razredni staresina</th>
+                    
+
 
                     <th>Edit</th>
                     <th>Details</th>
@@ -60,11 +61,13 @@
                     "datatype": "json"
                 },
                 "columns": [
-                    { "data": "GodineID", "autowidth": true },
+
+                    { "data": null, "render": function (data) { return (data["Opis_sg"]) }, "autowidth": true },
+                    { "data": null, "render": function (data) { return (data["GodineID"] + " (" + data["Opis"]) + ")" }, "autowidth": true },
                     { "data": "BrojOdeljenja", "autowidth": true },
-                    { "data": "SkolskaGodinaID", "autowidth": true },
+                    { "data": null, "render": function (data) { return (data["GodineID"] + "/" + data["BrojOdeljenja"] + "/" + data["Opis_sg"]) }, "autowidth": true },
                     { "data": null, "render": function (data) { return (data["Prezime"] + "  " + data["Ime"]) }, "autowidth": true},
-                    { "data": null, "render": function (data) { return (data["GodineID"] + "/" + data["BrojOdeljenja"] + "/" + data["SkolskaGodinaID"]) }, "autowidth": true },
+                    
                     
 
                     {

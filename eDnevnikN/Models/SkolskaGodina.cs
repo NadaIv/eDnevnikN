@@ -11,8 +11,8 @@ namespace eDnevnikN.Models
 		
 		public int SkolskaGodinaID { get; set; }
 
-		[StringLength(20, ErrorMessage = "Ne može biti duže od 20 karaktera.")]
-		public string Opis { get; set; }
+		[StringLength(4, ErrorMessage = "Ne može biti duže od 4 karaktera.")]
+		public string Opis_sg { get; set; }
 
 
 		public virtual ICollection<Odeljenja> Odeljenjas { get; set; }

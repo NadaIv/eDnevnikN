@@ -23,8 +23,8 @@ namespace eDnevnikN.DAL
 
 			var skolskaGodinas = new List<SkolskaGodina>
 			{
-			new SkolskaGodina{Opis="2016/2017"},
-			new SkolskaGodina{Opis="2017/2018"},
+			new SkolskaGodina{Opis_sg="2016"},
+			new SkolskaGodina{Opis_sg="2017"},
 			};
 
 			skolskaGodinas.ForEach(s => context.SkolskaGodinas.Add(s));
@@ -58,6 +58,18 @@ namespace eDnevnikN.DAL
 
 			
 
+			var odeljenjas = new List<Odeljenja>
+			{
+			new Odeljenja{GodineID=1,BrojOdeljenja="1",SkolskaGodinaID=1, ProfesoriID=1},
+			new Odeljenja{GodineID=1,BrojOdeljenja="2",SkolskaGodinaID=1, ProfesoriID=2},
+			new Odeljenja{GodineID=2,BrojOdeljenja="1",SkolskaGodinaID=2, ProfesoriID=3},
+			new Odeljenja{GodineID=2,BrojOdeljenja="2",SkolskaGodinaID=2, ProfesoriID=4},
+
+			};
+
+			odeljenjas.ForEach(s => context.Odeljenjas.Add(s));
+			context.SaveChanges();
+
 
 			var predmetis = new List<Predmeti>
 			{
@@ -90,6 +102,8 @@ namespace eDnevnikN.DAL
 			};
 			ucen_Predm_Ocenas.ForEach(s => context.Ucen_Predm_Ocenas.Add(s));
 			context.SaveChanges();
+
+
 		}
 	}
 }

@@ -32,11 +32,17 @@ namespace eDnevnikN.Controllers
 				var odelj = (from o in db.Odeljenjas
 							 join p in db.Profesoris
 							 on o.ProfesoriID equals p.ID
+							 join g in db.Godines
+							 on o.GodineID equals g.GodineID
+							 join sg in db.SkolskaGodinas
+							 on o.SkolskaGodinaID equals sg.SkolskaGodinaID
 							 select new {
 								 o.OdeljenjaID,
 								 o.GodineID,
 								 o.BrojOdeljenja,
 								 o.SkolskaGodinaID,
+								 g.Opis,
+								 sg.Opis_sg,
 								 p.Ime,
 								 p.Prezime
 							 }).ToList();
@@ -74,7 +80,9 @@ namespace eDnevnikN.Controllers
         public ActionResult Create()
         {
             ViewBag.ProfesoriID = new SelectList(db.Profesoris, "ID", "ImeIPrezime");
-            return View();
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg");
+			ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis");
+			return View();
         }
 
         // POST: Odeljenja/Create
@@ -82,7 +90,7 @@ namespace eDnevnikN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OdeljenjaID,Razred,BrojOdeljenja,GodinaUpisa,ProfesoriID")] Odeljenja odeljenja)
+        public ActionResult Create([Bind(Include = "OdeljenjaID,GodineID,BrojOdeljenja,SkolskaGodinaID,ProfesoriID")] Odeljenja odeljenja)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +100,9 @@ namespace eDnevnikN.Controllers
             }
 
             ViewBag.ProfesoriID = new SelectList(db.Profesoris, "ID", "ImeIPrezime", odeljenja.ProfesoriID);
-            return View(odeljenja);
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg");
+			ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis");
+			return View(odeljenja);
         }
 
         // GET: Odeljenja/Edit/5
@@ -108,7 +118,9 @@ namespace eDnevnikN.Controllers
                 return HttpNotFound();
             }
             ViewBag.ProfesoriID = new SelectList(db.Profesoris, "ID", "ImeIPrezime", odeljenja.ProfesoriID);
-            return View(odeljenja);
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg");
+			ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis");
+			return View(odeljenja);
         }
 
         // POST: Odeljenja/Edit/5
@@ -116,7 +128,7 @@ namespace eDnevnikN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OdeljenjaID,Razred,BrojOdeljenja,GodinaUpisa,ProfesoriID")] Odeljenja odeljenja)
+        public ActionResult Edit([Bind(Include = "OdeljenjaID,GodineID,BrojOdeljenja,SkolskaGodinaID,ProfesoriID")] Odeljenja odeljenja)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +137,9 @@ namespace eDnevnikN.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ProfesoriID = new SelectList(db.Profesoris, "ID", "ImeIPrezime", odeljenja.ProfesoriID);
-            return View(odeljenja);
+			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg");
+			ViewBag.GodineID = new SelectList(db.Godines, "GodineID", "Opis");
+			return View(odeljenja);
         }
 
         // GET: Odeljenja/Delete/5

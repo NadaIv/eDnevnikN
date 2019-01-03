@@ -12,7 +12,7 @@ namespace eDnevnikN.Models
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public int GodineID { get; set; }
 
-		[StringLength(20, ErrorMessage = "Ne može biti duže od 20 karaktera.")]
+		[StringLength(10, ErrorMessage = "Ne može biti duže od 10 karaktera.")]
 		public string Opis { get; set; }
 		
 

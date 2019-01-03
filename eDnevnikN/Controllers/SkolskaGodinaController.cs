@@ -27,7 +27,7 @@ namespace eDnevnikN.Controllers
 			using (SchoolContext db = new SchoolContext())
 			{
 				db.Configuration.LazyLoadingEnabled = false;
-				var skolskaGodinas = db.SkolskaGodinas.OrderBy(a => a.Opis).ToList();
+				var skolskaGodinas = db.SkolskaGodinas.OrderBy(a => a.Opis_sg).ToList();
 				return Json(new { data = skolskaGodinas }, JsonRequestBehavior.AllowGet);
 			}
 		}
@@ -58,7 +58,7 @@ namespace eDnevnikN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Opis")] SkolskaGodina skolskaGodina)
+        public ActionResult Create([Bind(Include = "Opis_sg")] SkolskaGodina skolskaGodina)
         {
 			try
 			{
@@ -107,7 +107,7 @@ namespace eDnevnikN.Controllers
 			}
 			var skgodinaToUpdate = db.SkolskaGodinas.Find(id);
 			if (TryUpdateModel(skgodinaToUpdate, "",
-			   new string[] {  "Opis" }))
+			   new string[] {  "Opis_sg" }))
 			{
 				try
 				{
