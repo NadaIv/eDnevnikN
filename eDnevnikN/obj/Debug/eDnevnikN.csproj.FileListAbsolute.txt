@@ -196,3 +196,4 @@ C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csprojAssemblyRefe
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.initial.resources
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.GenerateResource.cache
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Odeljenja.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.LoginErrorMessage.resources

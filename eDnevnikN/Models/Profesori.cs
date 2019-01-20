@@ -9,6 +9,7 @@ namespace eDnevnikN.Models
 {
 	public class Profesori
 	{
+		[DisplayName("ID profesora")]
 		public int ID { get; set; }
 
 		[Required]
@@ -32,6 +33,8 @@ namespace eDnevnikN.Models
 		[Required]
 		[StringLength(50)]
 		public string Status { get; set; }
+
+		public string LoginErrorMessage { get; set; }
 
 
 		[Display(Name = "Ime i prezime")]

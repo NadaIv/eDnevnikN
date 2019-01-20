@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace eDnevnikN.Models
 	public class Godine
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[DisplayName("Godina")]
 		public int GodineID { get; set; }
 
 		[StringLength(10, ErrorMessage = "Ne može biti duže od 10 karaktera.")]

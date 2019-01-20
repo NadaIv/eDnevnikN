@@ -1,0 +1,112 @@
+﻿
+
+@model eDnevnikN.Models.Profesori
+@{
+
+    Layout = null;
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>Login</title>
+    <style>
+        body
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 50%;
+            padding: 10px 10px;
+            border: 1px solid #333;
+            box-shadow: 8px 8px 5px #3F250B;
+        }
+
+        .field.validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container body-content">
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        <h1>DOBRODOSLI U E-DNEVNIK !</h1>
+        <div class="jumbotron">
+            @*<div id="logo">
+
+                    <img src="~/Content/themes/base/images/logo.png" class="desktop" />
+
+                </div>*@
+
+            <p class="lead"></p>
+            <p><a href="http://rg.edu.rs/" class="btn btn-primary btn-lg">Racunarska gimnazija </a></p>
+
+
+        </div>
+    </div>
+    <div id="login-div">
+        @using (Html.BeginForm("Odobrenje", "Login", FormMethod.Post))
+
+        {<table>
+
+                <tr>
+                    <td>@Html.LabelFor(a => a.KorisnickoIme)</td>
+                    <td>@Html.EditorFor(a => a.KorisnickoIme)</td>
+                    <td>@Html.ValidationMessageFor(a => a.KorisnickoIme)</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(a => a.Lozinka)
+                    </td>
+                    <td>
+                        @Html.EditorFor(a => a.Lozinka)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(a => a.Lozinka)
+
+                    </td>
+
+                <tr>
+                    <td>@Html.LabelFor(a => a.Status)</td>
+                    <td>
+                        @Html.DropDownList("Status", new List<SelectListItem> {
+                              new SelectListItem{Text="profesor", Value="profesor"},
+                              new SelectListItem{Text="admin", Value="admin"}} ,"Izaberi status")
+                    </td>
+
+                    <td>@Html.ValidationMessageFor(a => a.Status)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(a => a.LoginErrorMessage)</label>
+
+                    </td>
+                    <td>
+                        <input type="submit" name="name" value="Login" />
+                        <input type="reset" name="name" value="Clear" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>}
+
+    </div>
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+   
+</body>
+</html>
+

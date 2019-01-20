@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace eDnevnikN.Models
 {
 	public class Ucenici
 	{
+		[DisplayName("ID ucenika")]
 		public int ID { get; set; }
 
 		[Required]
@@ -22,15 +24,15 @@ namespace eDnevnikN.Models
 		public string Adresa { get; set; }
 
 		[DataType(DataType.Date)]
-
 		[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 		//public string FormattedDate => DatumRodjenja.ToShortDateString();
 		[Display(Name = "Datum rodjenja")]
 		public DateTime DatumRodjenja { get; set; }
 
-		
+	
 		public int SkolskaGodinaID { get; set; }
 
+		[DisplayName("Redni broj u odeljenju")]
 		public int RedBrUOdeljenju { get; set; }
 
 		[Display(Name = "Ime i prezime")]

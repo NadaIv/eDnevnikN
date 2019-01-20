@@ -162,8 +162,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GodineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OdeljenjaController.cs" />
     <Compile Include="Controllers\PredmetiController.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
@@ -186,6 +188,10 @@
     <Compile Include="Migrations\201901031434267_Odeljenja.cs" />
     <Compile Include="Migrations\201901031434267_Odeljenja.Designer.cs">
       <DependentUpon>201901031434267_Odeljenja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901040759024_LoginErrorMessage.cs" />
+    <Compile Include="Migrations\201901040759024_LoginErrorMessage.Designer.cs">
+      <DependentUpon>201901040759024_LoginErrorMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Godine.cs" />
@@ -417,6 +423,8 @@
     <Content Include="Views\Ucenici\Details.cshtml" />
     <Content Include="Views\Ucenici\Edit.cshtml" />
     <Content Include="Views\Ucenici\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -437,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901031434267_Odeljenja.resx">
       <DependentUpon>201901031434267_Odeljenja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901040759024_LoginErrorMessage.resx">
+      <DependentUpon>201901040759024_LoginErrorMessage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
