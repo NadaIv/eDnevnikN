@@ -169,6 +169,7 @@
     <Compile Include="Controllers\OdeljenjaController.cs" />
     <Compile Include="Controllers\PredmetiController.cs" />
     <Compile Include="Controllers\ProfesoriController.cs" />
+    <Compile Include="Controllers\ProfLoginController.cs" />
     <Compile Include="Controllers\SkolskaGodinaController.cs" />
     <Compile Include="Controllers\UceniciController.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
@@ -425,6 +426,14 @@
     <Content Include="Views\Ucenici\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutProf.cshtml" />
+    <Content Include="Views\Ucenici\IndexProf.cshtml" />
+    <Content Include="Views\ProfLogin\Index.cshtml" />
+    <Content Include="Views\Predmeti\IndexProf.cshtml" />
+    <Content Include="Views\Profesori\IndexProf.cshtml" />
+    <Content Include="Views\Odeljenja\IndexProf.cshtml" />
+    <Content Include="Views\Godine\IndexProf.cshtml" />
+    <Content Include="Views\SkolskaGodina\IndexProf.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

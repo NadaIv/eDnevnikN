@@ -41,7 +41,7 @@ namespace eDnevnikN.Controllers
 					Session["ID"] = v.ID;
 					Session["KorisnickoIme"] = v.KorisnickoIme;
 					Session["Status"] = v.Status;
-					return RedirectToAction("Index", "LoginProf"); //Ako je Profesor
+					return RedirectToAction("Index", "ProfLogin"); //Ako je Profesor
 				}
 
 			}

@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+<h2>E-DNEVNIK</h2>
+
+
+
+
+<body>
+    <div class="container body-content">
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+
+        <div class="jumbotron">
+            @*<div id="logo">
+
+                    <img src="~/Content/themes/base/images/logo.png" class="desktop" />
+
+                </div>*@
+            @*<h1>E-DNEVNIK</h1>*@
+            <p class="lead"></p>
+            <p><a href="http://rg.edu.rs/" class="btn btn-primary btn-lg">Racunarska gimnazija</a></p>
+
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <h2>I/1</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/ProfLogin/ListaUc?odeljenjeId=1 ">1/1 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>I/2</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/ProfLogin/ListaUc?odeljenjeId=2">1/2 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>II/1</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/ProfLogin/ListaUc?odeljenjeId=3">2/1 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>II/2</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/ProfLogin/ListaUc?odeljenjeId=4">2/1 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>III/1</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/Ocenjivanje/Index"> 3/1 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>III/2</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/Ocenjivanje/Index">3/2 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>IV/1</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/Ocenjivanje/Index">4/1 2017</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>IV/2</h2>
+                <p></p>
+                <p><a class="btn btn-default" href="~/Ocenjivanje/Index">4/2 2017</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+

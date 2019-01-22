@@ -20,6 +20,7 @@ namespace eDnevnikN.Models
 		[StringLength(50, ErrorMessage = "Ne može biti duže od 50 karaktera.")]
 		public string Prezime { get; set; }
 
+
 		[StringLength(50, ErrorMessage = "Ne može biti duže od 50 karaktera.")]
 		public string Adresa { get; set; }
 

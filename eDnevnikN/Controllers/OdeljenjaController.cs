@@ -24,6 +24,13 @@ namespace eDnevnikN.Controllers
 			
 		}
 
+		public ActionResult IndexProf()
+		{
+
+			return View();
+
+		}
+
 		public ActionResult GetOdeljenjas()
 		{
 			using (SchoolContext db = new SchoolContext())

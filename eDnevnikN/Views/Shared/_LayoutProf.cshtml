@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -28,16 +29,16 @@
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                    <li>@Html.ActionLink("Ucenici", "Index", "Ucenici")</li>
+                    <li>@Html.ActionLink("Ucenici", "IndexProf", "Ucenici")</li>
 
-                    <li>@Html.ActionLink("Predmeti", "Index", "Predmeti")</li>
+                    <li>@Html.ActionLink("Predmeti", "IndexProf", "Predmeti")</li>
 
 
-                    <li>@Html.ActionLink("Profesori", "Index", "Profesori")</li>
+                    <li>@Html.ActionLink("Profesori", "IndexProf", "Profesori")</li>
 
-                    <li>@Html.ActionLink("Odeljenja", "Index", "Odeljenja")</li>
-                    <li>@Html.ActionLink("Godine", "Index", "Godine")</li>
-                    <li>@Html.ActionLink("Skolska Godina", "Index", "SkolskaGodina")</li>
+                    <li>@Html.ActionLink("Odeljenja", "IndexProf", "Odeljenja")</li>
+                    <li>@Html.ActionLink("Godine", "IndexProf", "Godine")</li>
+                    <li>@Html.ActionLink("Skolska Godina", "IndexProf", "SkolskaGodina")</li>
                     <li>@Html.ActionLink("LogIn", "Index", "Login")</li>
                 </ul>
             </div>
@@ -55,10 +56,12 @@
     @Scripts.Render("~/bundles/bootstrap")
     @*<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>*@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+

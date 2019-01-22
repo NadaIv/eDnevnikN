@@ -26,6 +26,10 @@ namespace eDnevnikN.Controllers
 			return View();
 		}
 
+		public ActionResult IndexProf()
+		{
+			return View();
+		}
 
 		public ActionResult GetGodines()
 		{
