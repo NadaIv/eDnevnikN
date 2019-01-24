@@ -193,7 +193,5 @@ C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\DataTables-Editor-Server.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.Text.Encodings.Web.dll
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\bin\System.Text.Encodings.Web.xml
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csprojAssemblyReference.cache
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.initial.resources
+C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Initial.resources
 C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.csproj.GenerateResource.cache
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.Odeljenja.resources
-C:\Users\Zoka\Desktop\eDnevnikN\eDnevnikN\obj\Debug\eDnevnikN.Migrations.LoginErrorMessage.resources

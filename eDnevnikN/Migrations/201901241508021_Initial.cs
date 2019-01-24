@@ -3,7 +3,7 @@ namespace eDnevnikN.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -28,8 +28,8 @@ namespace eDnevnikN.Migrations
                     })
                 .PrimaryKey(t => t.OdeljenjaID)
                 .ForeignKey("dbo.Godine", t => t.GodineID, cascadeDelete: true)
-                .ForeignKey("dbo.SkolskaGodina", t => t.SkolskaGodinaID, cascadeDelete: true)
                 .ForeignKey("dbo.Profesori", t => t.ProfesoriID, cascadeDelete: true)
+                .ForeignKey("dbo.SkolskaGodina", t => t.SkolskaGodinaID, cascadeDelete: true)
                 .Index(t => t.GodineID)
                 .Index(t => t.SkolskaGodinaID)
                 .Index(t => t.ProfesoriID);
@@ -44,6 +44,7 @@ namespace eDnevnikN.Migrations
                         KorisnickoIme = c.String(nullable: false, maxLength: 50),
                         Lozinka = c.String(nullable: false, maxLength: 50),
                         Status = c.String(nullable: false, maxLength: 50),
+                        LoginErrorMessage = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -85,12 +86,12 @@ namespace eDnevnikN.Migrations
                         Prezime = c.String(nullable: false, maxLength: 50),
                         Adresa = c.String(maxLength: 50),
                         DatumRodjenja = c.DateTime(nullable: false),
-                        SkolskaGodinaID = c.Int(nullable: false),
+                        OdeljenjaID = c.Int(nullable: false),
                         RedBrUOdeljenju = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.SkolskaGodina", t => t.SkolskaGodinaID, cascadeDelete: true)
-                .Index(t => t.SkolskaGodinaID);
+                .ForeignKey("dbo.Odeljenja", t => t.OdeljenjaID, cascadeDelete: false)
+                .Index(t => t.OdeljenjaID);
             
             CreateTable(
                 "dbo.SkolskaGodina",
@@ -118,10 +119,10 @@ namespace eDnevnikN.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.Odeljenja", "SkolskaGodinaID", "dbo.SkolskaGodina");
             DropForeignKey("dbo.Odeljenja", "ProfesoriID", "dbo.Profesori");
             DropForeignKey("dbo.Ucen_Predm_Ocena", "UceniciID", "dbo.Ucenici");
-            DropForeignKey("dbo.Ucenici", "SkolskaGodinaID", "dbo.SkolskaGodina");
-            DropForeignKey("dbo.Odeljenja", "SkolskaGodinaID", "dbo.SkolskaGodina");
+            DropForeignKey("dbo.Ucenici", "OdeljenjaID", "dbo.Odeljenja");
             DropForeignKey("dbo.Ucen_Predm_Ocena", "PredmetiID", "dbo.Predmeti");
             DropForeignKey("dbo.Predm_Prof", "ProfesoriID", "dbo.Profesori");
             DropForeignKey("dbo.Predm_Prof", "PredmetiID", "dbo.Predmeti");
@@ -129,7 +130,7 @@ namespace eDnevnikN.Migrations
             DropForeignKey("dbo.Odeljenja", "GodineID", "dbo.Godine");
             DropIndex("dbo.Predm_Prof", new[] { "ProfesoriID" });
             DropIndex("dbo.Predm_Prof", new[] { "PredmetiID" });
-            DropIndex("dbo.Ucenici", new[] { "SkolskaGodinaID" });
+            DropIndex("dbo.Ucenici", new[] { "OdeljenjaID" });
             DropIndex("dbo.Ucen_Predm_Ocena", new[] { "UceniciID" });
             DropIndex("dbo.Ucen_Predm_Ocena", new[] { "PredmetiID" });
             DropIndex("dbo.Predmeti", new[] { "GodineID" });

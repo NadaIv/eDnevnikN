@@ -34,7 +34,7 @@ namespace eDnevnikN.Controllers
 		public ActionResult ListaUc(int odeljenjaId)
 		{
 			SchoolContext db = new SchoolContext();
-			List<Ucenici> ucenicis = db.Ucenicis.Where(a => a.SkolskaGodinaID == odeljenjaId).ToList();
+			List<Ucenici> ucenicis = db.Ucenicis.Where(a => a.OdeljenjaID == odeljenjaId).ToList();
 			return View(ucenicis);
 		}
 		public ActionResult Details(int id)

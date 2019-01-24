@@ -31,12 +31,13 @@ namespace eDnevnikN.Models
 		{
 			get
 			{
-				return GodineID + "/" + BrojOdeljenja + "/" + SkolskaGodinaID;
+				return GodineID + "/" + BrojOdeljenja + "/" + SkolskaGodinaID ;
 			}
 		}
 
 		public virtual Profesori Profesori { get; set; }
 		public virtual Godine Godine { get; set; }
 		public virtual SkolskaGodina SkolskaGodina { get; set; }
+		public virtual ICollection<Ucenici> Ucenicis { get; set; }
 	}
 }

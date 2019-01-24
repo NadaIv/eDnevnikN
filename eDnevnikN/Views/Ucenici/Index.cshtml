@@ -32,7 +32,8 @@
                     <th>Prezime</th>
                     <th>Adresa</th>
                     <th>Datum rodjenja</th>
-                    <th>Skolska godina</th>
+                   @*<th>Skolska godina</th>*@
+                    <th>Odeljenje</th>
                     <th>Redni broj u odeljenju</th>
                   
 
@@ -72,7 +73,8 @@
                             return date.getDate() + "." + month + "." + date.getFullYear();
                         }, "autowidth": true
                     },
-                    { "data": null, "render": function (data) { return (data["Opis_sg"]) }, "autowidth": true},
+                  //  { "data": null, "render": function (data) { return (data["Opis_sg"]  }, "autowidth": true },
+                    { "data": null, "render": function (data) { return (data["GodineID"] + "/" + data["BrojOdeljenja"] + "/" + data["SkolskaGodinaID"] ) }, "autowidth": true },
                     { "data": "RedBrUOdeljenju", "autowidth": true },
 
 

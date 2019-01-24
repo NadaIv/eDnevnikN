@@ -31,7 +31,10 @@ namespace eDnevnikN.Models
 		public DateTime DatumRodjenja { get; set; }
 
 	
-		public int SkolskaGodinaID { get; set; }
+		//public int SkolskaGodinaID { get; set; }
+
+
+		public int OdeljenjaID { get; set; }
 
 		[DisplayName("Redni broj u odeljenju")]
 		public int RedBrUOdeljenju { get; set; }
@@ -46,6 +49,8 @@ namespace eDnevnikN.Models
 		}
 
 		public virtual ICollection<Ucen_Predm_Ocena> Ucen_Predm_Ocenas { get; set; }
-		public virtual SkolskaGodina SkolskaGodina { get; set; }
+		
+		public virtual Odeljenja Odeljenja { get; set; }
+		//public virtual SkolskaGodina SkolskaGodina { get; set; }
 	}
 }

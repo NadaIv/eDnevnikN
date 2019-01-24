@@ -182,17 +182,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201901030924189_initial.cs" />
-    <Compile Include="Migrations\201901030924189_initial.Designer.cs">
-      <DependentUpon>201901030924189_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901031434267_Odeljenja.cs" />
-    <Compile Include="Migrations\201901031434267_Odeljenja.Designer.cs">
-      <DependentUpon>201901031434267_Odeljenja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901040759024_LoginErrorMessage.cs" />
-    <Compile Include="Migrations\201901040759024_LoginErrorMessage.Designer.cs">
-      <DependentUpon>201901040759024_LoginErrorMessage.cs</DependentUpon>
+    <Compile Include="Migrations\201901241508021_Initial.cs" />
+    <Compile Include="Migrations\201901241508021_Initial.Designer.cs">
+      <DependentUpon>201901241508021_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Godine.cs" />
@@ -337,7 +329,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="ClassDiagram11.cd" />
     <Content Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
@@ -434,6 +425,9 @@
     <Content Include="Views\Odeljenja\IndexProf.cshtml" />
     <Content Include="Views\Godine\IndexProf.cshtml" />
     <Content Include="Views\SkolskaGodina\IndexProf.cshtml" />
+    <Content Include="Views\ProfLogin\ListaOd.cshtml" />
+    <Content Include="Views\ProfLogin\ListaUc.cshtml" />
+    <Content Include="Views\ProfLogin\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -449,14 +443,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901030924189_initial.resx">
-      <DependentUpon>201901030924189_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901031434267_Odeljenja.resx">
-      <DependentUpon>201901031434267_Odeljenja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901040759024_LoginErrorMessage.resx">
-      <DependentUpon>201901040759024_LoginErrorMessage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901241508021_Initial.resx">
+      <DependentUpon>201901241508021_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

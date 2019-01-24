@@ -1,0 +1,27 @@
+﻿
+@using eDnevnikN.Models;
+
+@model IEnumerable<Odeljenja>
+
+@{
+    ViewBag.Title = "ListaOd";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+<h2>ListaOd</h2>
+
+
+<div style="font-family:Arial">
+    <h2>Odeljenja Lista</h2>
+
+    <ul>
+        @foreach (Odeljenja odeljenja in Model)
+        {
+            <li>
+                @Html.ActionLink(odeljenja.MatBrOdeljenja, "ListaUc", "ProfLogin", new { odeljenjaId = odeljenja.OdeljenjaID }, null)
+
+            </li>
+
+        }
+    </ul>
+</div>

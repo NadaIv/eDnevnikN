@@ -31,16 +31,24 @@ namespace eDnevnikN.Controllers
 			{
 				
 				var ucen = (from o in db.Ucenicis
-							 join p in db.SkolskaGodinas
-							 on o.SkolskaGodinaID equals p.SkolskaGodinaID
+						//	join p in db.SkolskaGodinas
+						//	on o.SkolskaGodinaID equals p.SkolskaGodinaID
+							join r in db.Odeljenjas
+						    on o.OdeljenjaID equals r.OdeljenjaID
 							 select new { o.ID,
 										  o.Ime,
 							       	      o.Prezime,
 								          o.Adresa,
 								          o.DatumRodjenja,
 								          o.RedBrUOdeljenju,
-								          p.SkolskaGodinaID,
-								          p.Opis_sg}).ToList();
+										  r.SkolskaGodinaID,
+										//  p.Opis_sg,
+										  r.OdeljenjaID,
+										  r.GodineID,
+										  r.BrojOdeljenja
+										  
+										
+										}).ToList();
 
 
 				return Json(new { data = ucen }, JsonRequestBehavior.AllowGet);
@@ -67,7 +75,8 @@ namespace eDnevnikN.Controllers
 		// GET: Ucenici/Create
 		public ActionResult Create()
 		{
-			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg");
+			//ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg");
+			ViewBag.OdeljenjaID = new SelectList(db.Odeljenjas, "OdeljenjaID", "MatBrOdeljenja");
 			return View();
 		}
 
@@ -76,7 +85,7 @@ namespace eDnevnikN.Controllers
 		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "Ime,Prezime,Adresa,DatumRodjenja,SkolskaGodinaID,RedBrUOdeljenju")] Ucenici ucenici)
+		public ActionResult Create([Bind(Include = "Ime,Prezime,Adresa,DatumRodjenja,RedBrUOdeljenju,OdeljenjaID")] Ucenici ucenici)
 		{
 			try
 			{
@@ -92,36 +101,15 @@ namespace eDnevnikN.Controllers
 				//Log the error (uncomment dex variable name and add a line here to write a log.
 				ModelState.AddModelError("", "Nije moguće sačuvati izmene. Pokušajte ponovo, i ako problem i dalje postoji, pozovite svog administratora sistema.");
 			}
-			ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg", ucenici.SkolskaGodinaID);
+
+		//	ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg", ucenici.SkolskaGodinaID);
+			ViewBag.OdeljenjaID = new SelectList(db.Odeljenjas, "OdeljenjaID", "MatBrOdeljenja", ucenici.OdeljenjaID);
 
 			return View(ucenici);
 		}
 
 
-		//// GET: Ucenici1/Create
-		//public ActionResult Create()
-		//{
-		//    ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis");
-		//    return View();
-		//}
-
-		//// POST: Ucenici1/Create
-		//// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		//// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//public ActionResult Create([Bind(Include = "ID,Ime,Prezime,Adresa,DatumRodjenja,SkolskaGodinaID,RedBrUOdeljenju")] Ucenici ucenici)
-		//{
-		//    if (ModelState.IsValid)
-		//    {
-		//        db.Ucenicis.Add(ucenici);
-		//        db.SaveChanges();
-		//        return RedirectToAction("Index");
-		//    }
-
-		//    ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis", ucenici.SkolskaGodinaID);
-		//    return View(ucenici);
-		//}
+		
 
 		// GET: Ucenici1/Edit/5
 		public ActionResult Edit(int? id)
@@ -135,8 +123,10 @@ namespace eDnevnikN.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg", ucenici.SkolskaGodinaID);
-            return View(ucenici);
+
+		//	ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg", ucenici.SkolskaGodinaID);
+			ViewBag.OdeljenjaID = new SelectList(db.Odeljenjas, "OdeljenjaID", "MatBrOdeljenja",ucenici.OdeljenjaID);
+			return View(ucenici);
         }
 
         // POST: Ucenici1/Edit/5
@@ -144,7 +134,7 @@ namespace eDnevnikN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Ime,Prezime,Adresa,DatumRodjenja,SkolskaGodinaID,RedBrUOdeljenju")] Ucenici ucenici)
+        public ActionResult Edit([Bind(Include = "ID,Ime,Prezime,Adresa,DatumRodjenja,RedBrUOdeljenju,OdeljenjaID")] Ucenici ucenici)
         {
             if (ModelState.IsValid)
             {
@@ -152,8 +142,10 @@ namespace eDnevnikN.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg", ucenici.SkolskaGodinaID);
-            return View(ucenici);
+
+			//ViewBag.SkolskaGodinaID = new SelectList(db.SkolskaGodinas, "SkolskaGodinaID", "Opis_sg", ucenici.SkolskaGodinaID);
+			ViewBag.OdeljenjaID = new SelectList(db.Odeljenjas, "OdeljenjaID", "MatBrOdeljenja", ucenici.OdeljenjaID);
+			return View(ucenici);
         }
 
         // GET: Ucenici1/Delete/5

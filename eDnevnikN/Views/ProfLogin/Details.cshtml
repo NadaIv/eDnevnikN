@@ -1,0 +1,46 @@
+﻿@model eDnevnikN.Models.Ucenici
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+<h2>Details</h2>
+
+<br /><br /><hr />
+            <div style="font-family:    Arial ;
+                font-size:   20px;
+              ">
+                <table>
+
+                    <tr>
+                        <td>
+                            <b>Ime ucenika:</b>
+                        </td>
+                        <td>
+                            @Model.Ime
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Prezime ucenika:</b>
+                        </td>
+                        <td>
+                            @Model.Prezime
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Redni broj u odeljenju:</b>
+                        </td>
+                        <td>
+                            @Model.RedBrUOdeljenju
+                        </td>
+                    </tr>
+                </table>
+                <br /><br /><hr />
+
+                @Html.ActionLink("Back to List", "ListaUc", new { odeljenjaId = @Model.OdeljenjaID })
+
+
+            </div>

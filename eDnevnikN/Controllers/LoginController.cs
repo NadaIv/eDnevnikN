@@ -25,7 +25,7 @@ namespace eDnevnikN.Controllers
 				{
 					if (prof.KorisnickoIme != null || prof.Lozinka == null)
 
-						prof.LoginErrorMessage = "Pokusaj ponovo..."; //Ako je pogresan unos
+						prof.LoginErrorMessage = "Pogresan unos, pokusaj ponovo..."; //Ako je pogresan unos
 					return View("Index", prof);
 				}
 

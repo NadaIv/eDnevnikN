@@ -62,11 +62,7 @@ namespace eDnevnikN.Controllers
 				}
 			}
 
-		//public ActionResult Index()
-		//{
-		//    var odeljenjas = db.Odeljenjas.Include(o => o.Profesori);
-		//    return View(odeljenjas.ToList());
-		//}
+		
 
 		// GET: Odeljenja/Details/5
 		public ActionResult Details(int? id)

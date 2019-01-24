@@ -1,0 +1,46 @@
+﻿@model IEnumerable<eDnevnikN.Models.Ucenici>
+
+@using eDnevnikN.Models;
+
+@{
+    //ViewBag.Title = "ListaUc";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+
+
+<div style="font-family:    Arial ;
+                font-size:   20px;
+                font-weight:    bold
+               ">
+    <h2>Spisak ucenika :</h2>
+
+    
+    
+
+    <br /><br /><hr />
+
+    @foreach (Ucenici ucenici in Model)
+    {
+
+
+
+        <table width="300">
+
+            <tr>
+
+                <td>@Html.ActionLink(ucenici.Ime + " " + ucenici.Prezime, "Details", new { id = ucenici.ID })</td>
+
+
+
+
+            </tr>
+
+        </table>
+    }
+
+    <br /><br /><hr />
+
+    @Html.ActionLink("Back to List", "Index", "ProfLogin")
+</div>
+

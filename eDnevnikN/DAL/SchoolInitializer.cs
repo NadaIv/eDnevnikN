@@ -36,27 +36,11 @@ namespace eDnevnikN.DAL
 			new Profesori{Ime="Mina",Prezime="Micic",KorisnickoIme="profesor",Lozinka="profesor",Status="profesor"},
 			new Profesori{Ime="Rade",Prezime="Radic",KorisnickoIme="123456",Lozinka="654321",Status="admin"},
 			new Profesori{Ime="Mitar",Prezime="Medic",KorisnickoIme="2468",Lozinka="1357",Status="profesor"},
+			new Profesori{Ime="Milan",Prezime="Medic",KorisnickoIme="milan",Lozinka="medic",Status="profesor"},
 			};
 
 			profesoris.ForEach(s => context.Profesoris.Add(s));
 			context.SaveChanges();
-
-			var ucenicis = new List<Ucenici>
-			{
-			new Ucenici{Prezime="Nedic",Ime="Neda",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),SkolskaGodinaID=1, RedBrUOdeljenju=1},
-			new Ucenici{Prezime="Milic",Ime="Mila",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2006-09-01"),SkolskaGodinaID=1, RedBrUOdeljenju=2},
-			new Ucenici{Prezime="Peric",Ime="Pera",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2000-09-01"),SkolskaGodinaID=2, RedBrUOdeljenju=3},
-			new Ucenici{Prezime="Jovic",Ime="Jovan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),SkolskaGodinaID=2, RedBrUOdeljenju=4},
-			new Ucenici{Prezime="Ilic",Ime="Ilija",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2004-09-01"),SkolskaGodinaID=1, RedBrUOdeljenju=5},
-			new Ucenici{Prezime="Milic",Ime="Milan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-12-01"),SkolskaGodinaID=1, RedBrUOdeljenju=6},
-			new Ucenici{Prezime="Ivic",Ime="Ivana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-10-01"),SkolskaGodinaID=2, RedBrUOdeljenju=7},
-			new Ucenici{Prezime="Zoric",Ime="Zorana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-01-01"),SkolskaGodinaID=2, RedBrUOdeljenju=8},
-			};
-
-			ucenicis.ForEach(s => context.Ucenicis.Add(s));
-			context.SaveChanges();
-
-			
 
 			var odeljenjas = new List<Odeljenja>
 			{
@@ -70,6 +54,20 @@ namespace eDnevnikN.DAL
 			odeljenjas.ForEach(s => context.Odeljenjas.Add(s));
 			context.SaveChanges();
 
+			var ucenicis = new List<Ucenici>
+			{
+			new Ucenici{Prezime="Nedic",Ime="Neda",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),OdeljenjaID=1, RedBrUOdeljenju=1},
+			new Ucenici{Prezime="Milic",Ime="Mila",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2006-09-01"),OdeljenjaID=1, RedBrUOdeljenju=2},
+			new Ucenici{Prezime="Peric",Ime="Pera",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2000-09-01"),OdeljenjaID=2, RedBrUOdeljenju=3},
+			new Ucenici{Prezime="Jovic",Ime="Jovan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-09-01"),OdeljenjaID=2, RedBrUOdeljenju=4},
+			new Ucenici{Prezime="Ilic",Ime="Ilija",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2004-09-01"),OdeljenjaID=1, RedBrUOdeljenju=5},
+			new Ucenici{Prezime="Milic",Ime="Milan",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-12-01"),OdeljenjaID=3, RedBrUOdeljenju=6},
+			new Ucenici{Prezime="Ivic",Ime="Ivana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-10-01"),OdeljenjaID=1, RedBrUOdeljenju=7},
+			new Ucenici{Prezime="Zoric",Ime="Zorana",Adresa="M.Tita bb",DatumRodjenja=DateTime.Parse("2005-01-01"),OdeljenjaID=4, RedBrUOdeljenju=8},
+			};
+
+			ucenicis.ForEach(s => context.Ucenicis.Add(s));
+			context.SaveChanges();
 
 			var predmetis = new List<Predmeti>
 			{

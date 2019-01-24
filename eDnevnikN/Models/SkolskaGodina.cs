@@ -18,6 +18,8 @@ namespace eDnevnikN.Models
 
 
 		public virtual ICollection<Odeljenja> Odeljenjas { get; set; }
-		public virtual ICollection<Ucenici> Ucenicis { get; set; }
+	//	public virtual ICollection<Ucenici> Ucenicis { get; set; }
+
+
 	}
 }
